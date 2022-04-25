@@ -1,3 +1,4 @@
+import 'package:beeanytime/config/routes/app_routes.dart';
 import 'package:beeanytime/constants/app_colors.dart';
 import 'package:beeanytime/constants/app_libraries.dart';
 import 'package:beeanytime/controllers/category/main_category_controller.dart';
@@ -99,28 +100,36 @@ class MainCategory extends StatelessWidget {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
-                              height: 102,
-                              width: 102,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: AppColors.textfieldColor,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 1,
-                                      blurRadius: 10,
-                                      offset: const Offset(
-                                        0.0, // Move to right 10  horizontally
-                                        10.0,
-                                      )
-                                      // changes position of shadow
-                                      ),
-                                ],
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed(Routes.subcategory, arguments: {
+                                  'name': _.mainCategories[index]['name'],
+                                  'image': _.mainCategories[index]['url'],
+                                });
+                              },
+                              child: Container(
+                                height: 102,
+                                width: 102,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: AppColors.textfieldColor,
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 1,
+                                        blurRadius: 10,
+                                        offset: const Offset(
+                                          0.0, // Move to right 10  horizontally
+                                          10.0,
+                                        )
+                                        // changes position of shadow
+                                        ),
+                                  ],
+                                ),
+                                child: Center(
+                                    child: Image.asset(
+                                        _.mainCategories[index]["url"])),
                               ),
-                              child: Center(
-                                  child: Image.asset(
-                                      _.mainCategories[index]["url"])),
                             ),
                             Text(
                               "${_.mainCategories[index]['name']}",
