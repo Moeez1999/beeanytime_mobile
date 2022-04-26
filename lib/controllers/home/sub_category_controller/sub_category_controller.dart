@@ -3,7 +3,8 @@ import 'package:beeanytime/constants/app_libraries.dart';
 class SubCategoryController extends GetxController {
   bool isLoading = false;
   String name = '';
-  var imageurl = '';
+  String? imageurl;
+  List sub = [];
   final List banners = [
     {"url": "assets/images/banner1.png"},
     {"url": "assets/images/banner2.png"},
@@ -11,15 +12,16 @@ class SubCategoryController extends GetxController {
   var data = Get.arguments;
   @override
   void onInit() {
-    // if (Get.arguments != null) {
-    //   print('Email is ${Get.arguments}');
-    //   name = Get.arguments;
-    //   update();
-    // }
-    print(data);
-    name = data['name'];
-    imageurl = data['url'];
+    if (Get.arguments != null) {
+      print('Data from previous screen is ${Get.arguments}');
+      name = Get.arguments['name'].toString();
+      imageurl = Get.arguments['image'].toString();
+      sub = Get.arguments['sub'];
 
-    super.onInit();
+      print("Image url is " + imageurl.toString());
+      update();
+
+      super.onInit();
+    }
   }
 }

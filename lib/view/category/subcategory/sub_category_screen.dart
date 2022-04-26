@@ -68,10 +68,21 @@ class SubCategoryScreen extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 16,
                           color: Colors.black,
-                          fontWeight: FontWeight.w700),
+                          fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
-                      height: 5,
+                      height: 22,
+                    ),
+
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: const BoxDecoration(
+                          color: Color(0xffF8AA16), shape: BoxShape.circle),
+                      child: Image.asset(_.imageurl!, color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 7,
                     ),
                     Text(
                       _.name,
@@ -79,65 +90,59 @@ class SubCategoryScreen extends StatelessWidget {
                           fontSize: 12,
                           fontFamily: 'Roboto',
                           color: Colors.black,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 48,
-                      width: 48,
-                      child: Image.asset(_.imageurl),
+                          fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
                       height: 23,
                     ),
-                    // GridView.builder(
-                    //   padding: const EdgeInsets.all(0),
-                    //   physics: const NeverScrollableScrollPhysics(),
-                    //   shrinkWrap: true,
-                    //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    //     crossAxisCount: 3,
-                    //     childAspectRatio: MediaQuery.of(context).size.width /
-                    //         (MediaQuery.of(context).size.height / 1.5),
-                    //   ),
-                    //   itemCount: _.mainCategories.length,
-                    //   itemBuilder: (context, index) {
-                    //     return Column(
-                    //       crossAxisAlignment: CrossAxisAlignment.center,
-                    //       children: [
-                    //         Container(
-                    //           height: 102,
-                    //           width: 102,
-                    //           decoration: BoxDecoration(
-                    //             shape: BoxShape.circle,
-                    //             color: AppColors.textfieldColor,
-                    //             boxShadow: [
-                    //               BoxShadow(
-                    //                   color: Colors.grey.withOpacity(0.5),
-                    //                   spreadRadius: 1,
-                    //                   blurRadius: 10,
-                    //                   offset: const Offset(
-                    //                     0.0, // Move to right 10  horizontally
-                    //                     10.0,
-                    //                   )
-                    //                   // changes position of shadow
-                    //                   ),
-                    //             ],
-                    //           ),
-                    //           child: Center(
-                    //               child: Image.asset(
-                    //                   _.mainCategories[index]["url"])),
-                    //         ),
-                    //         Text(
-                    //           "${_.mainCategories[index]['name']}",
-                    //           textAlign: TextAlign.center,
-                    //           style: const TextStyle(
-                    //               fontSize: 13,
-                    //               color: Colors.black,
-                    //               fontWeight: FontWeight.w500),
-                    //         ).marginOnly(top: 25),
-                    //       ],
-                    //     );
-                    //   },
-                    // )
+                    GridView.builder(
+                      padding: const EdgeInsets.all(0),
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        childAspectRatio: MediaQuery.of(context).size.width /
+                            (MediaQuery.of(context).size.height / 1.5),
+                      ),
+                      itemCount: _.sub.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 102,
+                              width: 102,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.textfieldColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 1,
+                                      blurRadius: 10,
+                                      offset: const Offset(
+                                        0.0, // Move to right 10  horizontally
+                                        10.0,
+                                      )
+                                      // changes position of shadow
+                                      ),
+                                ],
+                              ),
+                              child: Center(
+                                  child: Image.asset(_.sub[index]["suburl"])),
+                            ),
+                            Text(
+                              "${_.sub[index]['subname']}",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500),
+                            ).marginOnly(top: 25),
+                          ],
+                        );
+                      },
+                    )
                   ],
                 ).marginOnly(
                   left: 20,

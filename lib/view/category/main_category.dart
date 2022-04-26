@@ -92,8 +92,9 @@ class MainCategory extends StatelessWidget {
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
+                        mainAxisSpacing: 10,
                         childAspectRatio: MediaQuery.of(context).size.width /
-                            (MediaQuery.of(context).size.height / 1.5),
+                            (MediaQuery.of(context).size.height / 1.35),
                       ),
                       itemCount: _.mainCategories.length,
                       itemBuilder: (context, index) {
@@ -105,11 +106,12 @@ class MainCategory extends StatelessWidget {
                                 Get.toNamed(Routes.subcategory, arguments: {
                                   'name': _.mainCategories[index]['name'],
                                   'image': _.mainCategories[index]['url'],
+                                  'sub': _.mainCategories[index]['subcategory']
                                 });
                               },
                               child: Container(
-                                height: 102,
-                                width: 102,
+                                height: 100,
+                                width: 100,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColors.textfieldColor,
