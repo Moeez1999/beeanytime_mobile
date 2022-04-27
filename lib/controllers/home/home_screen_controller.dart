@@ -11,8 +11,25 @@ class HomeController extends GetxController {
   String videoPath =
       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4';
   final List data = [
-    {"url": "assets/images/banner1.png"},
-    {"url": "assets/images/banner2.png"},
+    {"url": "assets/images/Group 70.png"},
+    {
+      "url": "assets/images/Group 71.png",
+    },
+    {
+      "url": "assets/images/Group 78.png",
+    },
+    {
+      "url": "assets/images/Group 79.png",
+    },
+    {
+      "url": "assets/images/Group 80.png",
+    },
+    {
+      "url": "assets/images/Group 81.png",
+    },
+    {
+      "url": "assets/images/Group 81.png",
+    },
   ];
 
   bool isPlaying = false;

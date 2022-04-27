@@ -179,7 +179,7 @@ class HommeScreen extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height: 300,
+                        height: 200,
                         width: Get.width,
                         child: CarouselSlider.builder(
                           unlimitedMode: true,
@@ -189,7 +189,7 @@ class HommeScreen extends StatelessWidget {
                               width: Get.width,
                               height: 300,
                               child: Image.asset(_.data[index]['url'],
-                                  fit: BoxFit.cover),
+                                  fit: BoxFit.contain),
                             );
                           },
                           slideTransform: const CubeTransform(),

@@ -75,8 +75,8 @@ class SubCategoryScreen extends StatelessWidget {
                     ),
 
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: 102,
+                      width: 102,
                       decoration: const BoxDecoration(
                           color: Color(0xffF8AA16), shape: BoxShape.circle),
                       child: Image.asset(_.imageurl!, color: Colors.white),
@@ -129,7 +129,11 @@ class SubCategoryScreen extends StatelessWidget {
                                 ],
                               ),
                               child: Center(
-                                  child: Image.asset(_.sub[index]["suburl"])),
+                                  child: SizedBox(
+                                      height: 60,
+                                      width: 60,
+                                      child:
+                                          Image.asset(_.sub[index]["suburl"]))),
                             ),
                             Text(
                               "${_.sub[index]['subname']}",

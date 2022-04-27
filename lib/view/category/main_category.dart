@@ -35,7 +35,7 @@ class MainCategory extends StatelessWidget {
                   children: [
                     // ------------ SLider -------------
                     SizedBox(
-                      height: 200,
+                      height: 150,
                       width: Get.width,
                       child: CarouselSlider.builder(
                         unlimitedMode: true,
@@ -50,13 +50,13 @@ class MainCategory extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.asset(_.data[index]['url'],
-                                  fit: BoxFit.cover),
+                                  fit: BoxFit.contain),
                             ),
                           );
                         },
                         slideTransform: const CubeTransform(),
                         slideIndicator: CircularSlideIndicator(
-                            padding: const EdgeInsets.only(bottom: 32),
+                            padding: const EdgeInsets.only(bottom: 20),
                             indicatorBorderColor: Colors.transparent,
                             currentIndicatorColor: AppColors.primaryColor,
                             indicatorBackgroundColor: const Color(0xffc4c4c4)),
@@ -129,8 +129,14 @@ class MainCategory extends StatelessWidget {
                                   ],
                                 ),
                                 child: Center(
-                                    child: Image.asset(
-                                        _.mainCategories[index]["url"])),
+                                    child: SizedBox(
+                                  height: 60,
+                                  width: 60,
+                                  child: Image.asset(
+                                    _.mainCategories[index]["url"],
+                                    color: const Color(0xff1D1D1B),
+                                  ),
+                                )),
                               ),
                             ),
                             Text(

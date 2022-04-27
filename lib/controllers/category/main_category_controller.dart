@@ -5,8 +5,14 @@ class MainCategoryController extends GetxController {
 
   TextEditingController search = TextEditingController();
   final List data = [
-    {"url": "assets/images/banner1.png"},
-    {"url": "assets/images/banner2.png"},
+    {"url": "assets/images/Group 65.png"},
+    {"url": "assets/images/Group 64.png",},
+    {"url": "assets/images/Group 66.png",},
+    {"url": "assets/images/Group 67.png",},
+    {"url": "assets/images/Group 68.png",},
+    {"url": "assets/images/Group 69.png",},
+    {"url": "assets/images/Group 63.png",},
+
   ];
 
   final List mainCategories = [
@@ -36,7 +42,7 @@ class MainCategoryController extends GetxController {
         },
         {
           'subname': 'Sub6',
-          "suburl": AppAssets.sub6,
+          "suburl": AppAssets.sub8,
         },
         {
           'subname': 'Sub7',
