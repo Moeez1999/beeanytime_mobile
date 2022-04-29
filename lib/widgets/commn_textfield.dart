@@ -73,7 +73,7 @@ class CommonTextField extends StatelessWidget {
             ? GestureDetector(
                 child: Icon(
                   prefixIcon,
-                  color: const Color(0xffACACAC),
+                  color: Colors.black,
                   size: 20.0,
                 ),
                 onTap: prefixIconTap,

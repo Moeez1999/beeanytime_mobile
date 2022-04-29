@@ -21,6 +21,7 @@ class CommonScaffold extends StatelessWidget {
   final bool centerDocked;
   final bool automaticallyImplyLeading;
   final Widget? leading;
+  final bool? twofields;
 
   const CommonScaffold({
     Key? key,
@@ -38,6 +39,7 @@ class CommonScaffold extends StatelessWidget {
     this.extendBodyBehindAppBar = false,
     this.backGroundColors,
     this.scaffoldKey,
+    this.twofields,
     this.showBottomNav = false,
     this.centerDocked = false,
     this.floatingIcon = Icons.add,
@@ -74,11 +76,34 @@ class CommonScaffold extends StatelessWidget {
                     //leading: leading,
                     backgroundColor: appbarcolor,
                     // <<------------- appbar title ------------>>
-                    title: CommonTextField(
-                      suffixicon: const Icon(Icons.search, color: Colors.black),
-                      controller: _.search,
-                      hintText: AppStrings.textfieldhint,
-                    ),
+                    title: twofields == false
+                        ? CommonTextField(
+                            suffixicon:
+                                const Icon(Icons.search, color: Colors.black),
+                            controller: _.search,
+                            hintText: AppStrings.textfieldhint,
+                          )
+                        : Row(
+                            children: [
+                              Flexible(
+                                child: CommonTextField(
+                                  prefixIcon: Icons.search,
+                                  controller: _.search,
+                                  hintText: "Categories ...",
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Flexible(
+                                child: CommonTextField(
+                                  prefixIcon: Icons.gps_fixed_outlined,
+                                  controller: _.search,
+                                  hintText: "Postcode",
+                                ),
+                              ),
+                            ],
+                          ),
                     actions: [
                       Row(
                         children: [

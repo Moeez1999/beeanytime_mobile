@@ -34,4 +34,8 @@ class AppAssets {
   static const String sub6 = "$imageDir/sub6.png";
   static const String sub7 = "$imageDir/sub7.png";
   static const String sub8 = "$imageDir/sub2.gif";
+   static const String filter = "$imageDir/filter.png";
+   static const String comment = "$imageDir/comment.png";
+   static const String certified = "$imageDir/certified.png";
+   static const String notfound = "$imageDir/notfound.png";
 }

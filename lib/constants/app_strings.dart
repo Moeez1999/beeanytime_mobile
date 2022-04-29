@@ -16,10 +16,13 @@ class AppStrings {
   static const String pagemainmessage = "Providers available as Trades People";
 
 
-   // -------------------- Register Strings ----------------
-  static const String registerMessage = "Register in to Society  1";
-   static const String otherLogin = "Or log in with";
+   // -------------------- Seeker Profile Strings ----------------
+  static const String message = "Small Parcel available within 1.0 miles";
+   static const String filter = "Filter";
    static const String alreadyHaveAccount = "ALREADY HAVE AN ACCOOUNT ?";
     static const String loginword = "Login";
+
+
+    
 
 }
