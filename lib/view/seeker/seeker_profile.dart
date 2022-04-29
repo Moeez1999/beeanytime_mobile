@@ -1,6 +1,8 @@
 import 'package:beeanytime/constants/app_libraries.dart';
 import 'package:beeanytime/controllers/seeker/seeker_profile_controller.dart';
 import 'package:beeanytime/widgets/commmon_scaffold.dart';
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class SeekerProfileScreen extends StatelessWidget {
   const SeekerProfileScreen({Key? key}) : super(key: key);
@@ -11,7 +13,6 @@ class SeekerProfileScreen extends StatelessWidget {
         init: SeekerProfileControler(),
         builder: (_) {
           return CommonScaffold(
-            twofields: true,
             appbarelevation: 2,
             centerDocked: true,
             backarrow: Colors.black,
@@ -40,17 +41,332 @@ class SeekerProfileScreen extends StatelessWidget {
                               const Text(
                                 AppStrings.message,
                                 style: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: Color(0xff1d1d1b)),
                               ),
                               const Spacer(),
-                              const Text(
-                                AppStrings.filter,
-                                style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff1d1d1b)),
+                              InkWell(
+                                onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return StatefulBuilder(
+                                            builder: ((context, setState) =>
+                                                Dialog(
+                                                  elevation: 10,
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20.0)), //this right here
+                                                  child: SizedBox(
+                                                    height: 450,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              20.0),
+                                                      child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Row(
+                                                            children: [
+                                                              const Text(
+                                                                  "Filters",
+                                                                  style: TextStyle(
+                                                                      color: Colors
+                                                                          .black,
+                                                                      fontSize:
+                                                                          12,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w700)),
+                                                              Spacer(),
+                                                              Image.asset(
+                                                                  AppAssets
+                                                                      .filter)
+                                                            ],
+                                                          ).marginOnly(
+                                                              top: 20,
+                                                              bottom: 19),
+                                                          const Divider(
+                                                            height: 1,
+                                                            thickness: 1,
+                                                            color: Color(
+                                                                0xffEBEBEB),
+                                                          ),
+                                                          const SizedBox(
+                                                            height: 14,
+                                                          ),
+                                                          Row(
+                                                            children: const [
+                                                              Text(
+                                                                "Distance",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        12,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                              Spacer(),
+                                                              Text(
+                                                                "1.0 miles",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        12,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    color: Colors
+                                                                        .black),
+                                                              ),
+                                                            ],
+                                                          ).marginOnly(top: 12),
+                                                          SfSlider(
+                                                            activeColor:
+                                                                const Color(
+                                                                    0xffF8AA16),
+                                                            inactiveColor:
+                                                                Colors.black,
+                                                            showTicks: true,
+                                                            enableTooltip: true,
+                                                            min: 0.0,
+                                                            max: 1000.0,
+                                                            value: _.value,
+                                                            onChanged: (dynamic
+                                                                newValue) {
+                                                              setState(() {
+                                                                _.value =
+                                                                    newValue;
+                                                              });
+                                                            },
+                                                          ).marginOnly(
+                                                              bottom: 15),
+                                                          const Divider(
+                                                            height: 1,
+                                                            thickness: 1,
+                                                            color: Color(
+                                                                0xffEBEBEB),
+                                                          ),
+                                                          const SizedBox(
+                                                            height: 14,
+                                                          ),
+                                                          const Align(
+                                                            alignment: Alignment
+                                                                .center,
+                                                            child: Text(
+                                                              "Sort by rating",
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400,
+                                                                  color: Colors
+                                                                      .black),
+                                                            ),
+                                                          ),
+                                                          Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Column(
+                                                                children: [
+                                                                  const Text(
+                                                                    "High to Low",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .w400,
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ),
+                                                                  Radio<String>(
+                                                                    activeColor:
+                                                                        const Color(
+                                                                            0xffF8AA16),
+                                                                    value:
+                                                                        'High to Low',
+                                                                    groupValue:
+                                                                        _.selectedrating,
+                                                                    onChanged:
+                                                                        (value) {
+                                                                      setState(
+                                                                          () {
+                                                                        _.selectedrating =
+                                                                            value!;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              const SizedBox(
+                                                                width: 40,
+                                                              ),
+                                                              Column(
+                                                                children: [
+                                                                  const Text(
+                                                                    "High to Low",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .w400,
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ),
+                                                                  Radio<String>(
+                                                                    activeColor:
+                                                                        const Color(
+                                                                            0xffF8AA16),
+                                                                    value:
+                                                                        'Low to High',
+                                                                    groupValue:
+                                                                        _.selectedrating,
+                                                                    onChanged:
+                                                                        (value) {
+                                                                      setState(
+                                                                          () {
+                                                                        _.selectedrating =
+                                                                            value!;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          ).marginSymmetric(
+                                                              vertical: 20),
+                                                          const Divider(
+                                                            height: 1,
+                                                            thickness: 1,
+                                                            color: Color(
+                                                                0xffEBEBEB),
+                                                          ),
+                                                          const SizedBox(
+                                                            height: 14,
+                                                          ),
+                                                          const Align(
+                                                            alignment: Alignment
+                                                                .center,
+                                                            child: Text(
+                                                              "Sort by price",
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                  fontSize: 12,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400,
+                                                                  color: Colors
+                                                                      .black),
+                                                            ),
+                                                          ),
+                                                          const SizedBox(
+                                                            height: 20,
+                                                          ),
+                                                          Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Column(
+                                                                children: [
+                                                                  const Text(
+                                                                    "High to Low",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .w400,
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ),
+                                                                  Radio<String>(
+                                                                    activeColor:
+                                                                        const Color(
+                                                                            0xffF8AA16),
+                                                                    value:
+                                                                        'Low to high',
+                                                                    groupValue:
+                                                                        _.selectedprice,
+                                                                    onChanged:
+                                                                        (value) {
+                                                                      setState(
+                                                                          () {
+                                                                        _.selectedprice =
+                                                                            value!;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              const SizedBox(
+                                                                width: 40,
+                                                              ),
+                                                              Column(
+                                                                children: [
+                                                                  const Text(
+                                                                    "Low to High",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .w400,
+                                                                        color: Colors
+                                                                            .black),
+                                                                  ),
+                                                                  Radio<String>(
+                                                                    activeColor:
+                                                                        const Color(
+                                                                            0xffF8AA16),
+                                                                    value:
+                                                                        'High to Low',
+                                                                    groupValue:
+                                                                        _.selectedprice,
+                                                                    onChanged:
+                                                                        (value) {
+                                                                      setState(
+                                                                          () {
+                                                                        _.selectedprice =
+                                                                            value!;
+                                                                      });
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )));
+                                      });
+                                },
+                                child: const Text(
+                                  AppStrings.filter,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xff1d1d1b)),
+                                ),
                               ),
                               const SizedBox(
                                 width: 5,
@@ -58,8 +374,8 @@ class SeekerProfileScreen extends StatelessWidget {
                               Image.asset(AppAssets.filter)
                             ],
                           ).marginOnly(
-                              top: 15, left: 15, bottom: 30, right: 15),
-                          _.data.length == 0
+                              top: 35, left: 15, bottom: 30, right: 15),
+                          _.data.isNotEmpty
                               ? ListView.separated(
                                   physics: const BouncingScrollPhysics(),
                                   shrinkWrap: true,
@@ -120,7 +436,50 @@ class SeekerProfileScreen extends StatelessWidget {
                                                                 0xff1d1d1b)),
                                                       ),
                                                       const SizedBox(
-                                                        width: 19,
+                                                        width: 25,
+                                                      ),
+                                                      RatingBar.builder(
+                                                        itemSize: 15,
+                                                        initialRating: 3,
+                                                        minRating: 1,
+                                                        direction:
+                                                            Axis.horizontal,
+                                                        allowHalfRating: true,
+                                                        itemCount: 5,
+                                                        itemBuilder:
+                                                            (context, _) =>
+                                                                const Icon(
+                                                          Icons.star,
+                                                          color: Colors.amber,
+                                                        ),
+                                                        onRatingUpdate:
+                                                            (rating) {
+                                                          rating = _.rating;
+                                                          _.update();
+                                                        },
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 3,
+                                                      ),
+                                                      Text(
+                                                        "${_.rating}",
+                                                        style: const TextStyle(
+                                                            fontSize: 11,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color:
+                                                                Colors.black),
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 3,
+                                                      ),
+                                                      const Text(
+                                                        "(10)",
+                                                        style: TextStyle(
+                                                            fontSize: 11,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color: Colors.grey),
                                                       ),
                                                     ],
                                                   ),
@@ -192,7 +551,7 @@ class SeekerProfileScreen extends StatelessWidget {
                                             child: const Text(
                                               'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
                                               style: TextStyle(
-                                                  fontSize: 11,
+                                                  fontSize: 12,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
                                             ).marginSymmetric(
@@ -344,8 +703,8 @@ class SeekerProfileScreen extends StatelessWidget {
                             height: 30,
                           ),
                           Container(
-                            height: 40,
-                            width: 170,
+                            height: 50,
+                            width: 190,
                             decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
@@ -354,7 +713,7 @@ class SeekerProfileScreen extends StatelessWidget {
                               child: Text(
                                 "Post an Open Request",
                                 style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w700,
                                     color: Colors.white),
                               ),

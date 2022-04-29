@@ -4,4 +4,6 @@ class Routes {
   static const maincategory = '/maincategory';
   static const subcategory = '/subcategory';
   static const seekerprofile = '/seekerprofile';
+
+  static const seekerdetailprofile = '/seekerdetailprofile';
 }

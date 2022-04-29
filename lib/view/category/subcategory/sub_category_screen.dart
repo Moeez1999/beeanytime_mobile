@@ -48,13 +48,13 @@ class SubCategoryScreen extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Image.asset(_.banners[index]['url'],
-                                  fit: BoxFit.cover),
+                                  fit: BoxFit.contain),
                             ),
                           );
                         },
                         slideTransform: const CubeTransform(),
                         slideIndicator: CircularSlideIndicator(
-                            padding: const EdgeInsets.only(bottom: 32),
+                            padding: const EdgeInsets.only(bottom: 30),
                             indicatorBorderColor: Colors.transparent,
                             currentIndicatorColor: AppColors.primaryColor,
                             indicatorBackgroundColor: const Color(0xffc4c4c4)),
@@ -79,7 +79,11 @@ class SubCategoryScreen extends StatelessWidget {
                       width: 102,
                       decoration: const BoxDecoration(
                           color: Color(0xffF8AA16), shape: BoxShape.circle),
-                      child: Image.asset(_.imageurl!, color: Colors.white),
+                      child: Image.asset(
+                        _.imageurl!,
+                        color: Colors.white,
+                        fit: BoxFit.fitWidth,
+                      ).marginAll(20),
                     ),
                     const SizedBox(
                       height: 7,
@@ -132,8 +136,10 @@ class SubCategoryScreen extends StatelessWidget {
                                   child: SizedBox(
                                       height: 60,
                                       width: 60,
-                                      child:
-                                          Image.asset(_.sub[index]["suburl"]))),
+                                      child: Image.asset(
+                                        _.sub[index]["suburl"],
+                                        fit: BoxFit.fill,
+                                      ))),
                             ),
                             Text(
                               "${_.sub[index]['subname']}",

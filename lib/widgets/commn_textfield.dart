@@ -99,9 +99,9 @@ class CommonTextField extends StatelessWidget {
         hintText: hintText,
         fillColor: fillcolor,
         filled: true,
-        hintStyle: TextStyle(color: AppColors.blackColor30),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        hintStyle: TextStyle(color: AppColors.blackColor30, fontSize: 12),
+        // contentPadding:
+        //     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         labelText: labelText,
 
         labelStyle: const TextStyle(color: Colors.black, fontSize: 10.0),

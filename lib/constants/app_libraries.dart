@@ -8,5 +8,5 @@ export 'package:flutter/material.dart';
 export 'package:beeanytime/constants/app_assets.dart';
 export 'package:better_player/better_player.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+export  'package:flutter_rating_bar/flutter_rating_bar.dart';
 export 'package:beeanytime/widgets/app_loaders.dart';

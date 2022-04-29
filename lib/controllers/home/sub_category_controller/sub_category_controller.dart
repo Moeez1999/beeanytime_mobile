@@ -6,8 +6,14 @@ class SubCategoryController extends GetxController {
   String? imageurl;
   List sub = [];
   final List banners = [
-    {"url": "assets/images/banner1.png"},
-    {"url": "assets/images/banner2.png"},
+    {"url": "assets/images/Group 65.png"},
+    {"url": "assets/images/Group 64.png",},
+    {"url": "assets/images/Group 66.png",},
+    {"url": "assets/images/Group 67.png",},
+    {"url": "assets/images/Group 68.png",},
+    {"url": "assets/images/Group 69.png",},
+    {"url": "assets/images/Group 63.png",},
+
   ];
   var data = Get.arguments;
   @override
