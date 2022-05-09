@@ -9,7 +9,7 @@ import 'package:beeanytime/view/splash/splash_screen.dart';
 import '../../constants/app_libraries.dart';
 
 class AppPages {
-  static var initial = Routes.maincategory;
+  static var initial = Routes.seekerdetailprofile;
   static final routes = [
     // <------ Splash Routes --------->
     GetPage(
