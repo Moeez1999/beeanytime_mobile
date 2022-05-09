@@ -355,8 +355,8 @@ class SeekerProfileDetailsScreen extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       AppStrings.description,
                       style: TextStyle(
                           fontSize: 14,
@@ -366,13 +366,33 @@ class SeekerProfileDetailsScreen extends StatelessWidget {
                     SizedBox(
                       height: 7,
                     ),
-                    Container(
-                        child: Text(
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"))
+                    SizedBox(
+                      child: Text(
+                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"),
+                    )
                   ],
-                ).marginOnly(left: 38, right: 20, bottom: 20)
+                ).marginOnly(left: 38, right: 20, bottom: 40),
+                Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Color(0xffF8AA16)),
+                    child: const Center(
+                      child: Text(
+                        "Create a Service Request",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
               ],
-            ),
+            ).marginOnly(top: 10, bottom: 20),
           );
         });
   }
