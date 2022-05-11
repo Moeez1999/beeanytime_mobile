@@ -39,4 +39,16 @@ class AppStrings {
   static const String badges = "Badges";
   static const String servicedescription = "Service Description";
    static const String socialprofile = "Social Profile";
+   // -------------------- create Service Screen Strings ----------------
+  static const String createservice = "Create Service Request";
+   static const String selectedcategory = "Selected Category";
+   static const String requestDescription = "Request Description";
+   static const String chooseresponse = "Choose Response Type of Service";
+   static const String serviceResponse = "Service Address";
+   static const String hide = "Hide Address";
+   static const String date = "Date";
+    static const String createAddress = "Create Address";
+   // -------------------- Add Address Screen Strings ----------------
+  static const String addaddress = "Add Address";
+  static const String postCode = "Post Code";
 }

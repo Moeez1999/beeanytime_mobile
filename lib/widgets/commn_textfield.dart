@@ -13,6 +13,8 @@ class CommonTextField extends StatelessWidget {
   final IconData? buttonIcon;
   final IconData? prefixIcon;
   final bool? togglePassword;
+  final int? maxlines;
+  final int? maxlength;
   final int? maxLength;
   final Function()? toggleFunction;
   final IconData? toggleIcon;
@@ -25,14 +27,18 @@ class CommonTextField extends StatelessWidget {
   final FocusNode? focus;
   final TextInputAction? textInputAction;
   final Widget? suffixicon;
+  final double? radius;
   final changeObscureStatus;
   const CommonTextField(
       {Key? key,
       @required this.controller,
       this.validator,
+      this.radius,
       this.bordercolor,
       this.labelText,
       this.fillcolor,
+      this.maxLength,
+      this.maxlines,
       this.hintText,
       this.isTextHidden = false,
       this.buttonIcon,
@@ -43,19 +49,20 @@ class CommonTextField extends StatelessWidget {
       this.toggleIcon,
       this.keyboardType = TextInputType.text,
       this.textInputAction = TextInputAction.done,
-      this.maxLength,
       this.readOnly,
       this.onTap,
       this.inputFormatters,
       this.prefixIconTap,
       this.changeObscureStatus,
       this.focus,
-      this.suffixicon})
+      this.suffixicon,
+      this.maxlength})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxlines,
       textAlign: TextAlign.left,
       textAlignVertical: TextAlignVertical.center,
       onChanged: onChanged,
@@ -84,16 +91,16 @@ class CommonTextField extends StatelessWidget {
           borderSide: BorderSide(
             color: bordercolor ?? Colors.transparent,
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(20),
+          borderRadius: BorderRadius.all(
+            Radius.circular(radius ?? 20.0),
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: bordercolor ?? const Color(0xfff7fbff),
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(20),
+          borderRadius: BorderRadius.all(
+            Radius.circular(radius ?? 20.0),
           ),
         ),
         hintText: hintText,
@@ -105,9 +112,9 @@ class CommonTextField extends StatelessWidget {
         labelText: labelText,
 
         labelStyle: const TextStyle(color: Colors.black, fontSize: 10.0),
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xfff7fbff)),
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Color(0xfff7fbff)),
+          borderRadius: BorderRadius.all(Radius.circular(radius ?? 20.0)),
         ),
       ),
       style: const TextStyle(color: Colors.black, fontSize: 15),

@@ -38,4 +38,5 @@ class AppAssets {
   static const String comment = "$imageDir/comment.png";
   static const String certified = "$imageDir/certfied.png";
   static const String notfound = "$imageDir/notfound.png";
+  static const String success = "$imageDir/success.png";
 }

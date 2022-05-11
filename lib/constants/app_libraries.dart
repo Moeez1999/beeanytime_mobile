@@ -10,3 +10,5 @@ export 'package:better_player/better_player.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export  'package:flutter_rating_bar/flutter_rating_bar.dart';
 export 'package:beeanytime/widgets/app_loaders.dart';
+export 'package:beeanytime/widgets/commmon_scaffold.dart';
+export 'package:beeanytime/constants/app_colors.dart';

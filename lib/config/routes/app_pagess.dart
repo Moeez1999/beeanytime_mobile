@@ -1,15 +1,19 @@
 import 'package:beeanytime/config/routes/app_routes.dart';
+import 'package:beeanytime/controllers/services/service_detail_screen.dart';
 import 'package:beeanytime/view/category/main_category.dart';
 import 'package:beeanytime/view/category/subcategory/sub_category_screen.dart';
 import 'package:beeanytime/view/home/home_Screen.dart';
 import 'package:beeanytime/view/seeker/seeker_profile.dart';
 import 'package:beeanytime/view/seeker/seeker_profile_details_screen.dart';
+import 'package:beeanytime/view/services/add_address_detail_screen.dart';
+import 'package:beeanytime/view/services/add_address_screen.dart';
+import 'package:beeanytime/view/services/create_services_screen.dart';
 import 'package:beeanytime/view/splash/splash_screen.dart';
 
 import '../../constants/app_libraries.dart';
 
 class AppPages {
-  static var initial = Routes.seekerdetailprofile;
+  static var initial = Routes.servicedetails;
   static final routes = [
     // <------ Splash Routes --------->
     GetPage(
@@ -46,6 +50,32 @@ class AppPages {
     GetPage(
       name: Routes.seekerdetailprofile,
       page: () => const SeekerProfileDetailsScreen(),
+    ),
+
+    // <------ Create Services Routes --------->
+    GetPage(
+      name: Routes.createservices,
+      page: () => const CreateServices(),
+    ),
+
+
+     // <------ Create Address Routes --------->
+    GetPage(
+      name: Routes.createaddress,
+      page: () => const CreateAddress(),
+    ),
+
+
+     // <------ Add Address Details  Routes --------->
+    GetPage(
+      name: Routes.addaddressdetails,
+      page: () => const AddAddressDetailsScreen(),
+    ),
+
+     // <------ Service Details  Routes --------->
+    GetPage(
+      name: Routes.servicedetails,
+      page: () => const ServiceDetail(),
     ),
   ];
 }
