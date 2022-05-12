@@ -71,12 +71,12 @@ class CommonDropDownField extends StatelessWidget {
                 ),
                 border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(6.0),
+                      Radius.circular(10.0),
                     ),
                     borderSide: BorderSide(width: 1.0)),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(
-                    Radius.circular(6.0),
+                    Radius.circular(10.0),
                   ),
                   borderSide: BorderSide(
                       color: bordercolor ?? Colors.transparent, width: 3.0),

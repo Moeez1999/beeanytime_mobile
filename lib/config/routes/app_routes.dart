@@ -10,4 +10,5 @@ class Routes {
   static const createaddress ='/createaddress';
    static const addaddressdetails ='/addaddressdetails';
    static const servicedetails ='/servicedetail';
+   static const addserviceprovider ='/adserviceprovider';
 }

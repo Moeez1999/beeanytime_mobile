@@ -97,7 +97,7 @@ class AddAddressDetailsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Align(

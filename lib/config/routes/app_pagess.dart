@@ -1,5 +1,6 @@
 import 'package:beeanytime/config/routes/app_routes.dart';
-import 'package:beeanytime/controllers/services/service_detail_screen.dart';
+import 'package:beeanytime/view/services/add_service_provider_screen.dart';
+import 'package:beeanytime/view/services/service_detail_screen.dart';
 import 'package:beeanytime/view/category/main_category.dart';
 import 'package:beeanytime/view/category/subcategory/sub_category_screen.dart';
 import 'package:beeanytime/view/home/home_Screen.dart';
@@ -13,7 +14,7 @@ import 'package:beeanytime/view/splash/splash_screen.dart';
 import '../../constants/app_libraries.dart';
 
 class AppPages {
-  static var initial = Routes.servicedetails;
+  static var initial = Routes.addserviceprovider;
   static final routes = [
     // <------ Splash Routes --------->
     GetPage(
@@ -76,6 +77,12 @@ class AppPages {
     GetPage(
       name: Routes.servicedetails,
       page: () => const ServiceDetail(),
+    ),
+
+         // <------ Add Service Provider Routes --------->
+    GetPage(
+      name: Routes.addserviceprovider,
+      page: () => const AddServiceProvider(),
     ),
   ];
 }

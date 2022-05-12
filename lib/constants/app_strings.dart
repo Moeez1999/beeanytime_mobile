@@ -51,4 +51,13 @@ class AppStrings {
    // -------------------- Add Address Screen Strings ----------------
   static const String addaddress = "Add Address";
   static const String postCode = "Post Code";
+
+
+   // -------------------- Add Service Provider Screen Strings ----------------
+  static const String addMyservice = "Add My Service";
+  static const String enableservice = "Enable Service";
+  static const String hideaddress = "Hide Address";
+  static const String serviceTitle = "Service Title";
+  static const String applyCancllationCharges = "Apply Cancellation Charges";
+
 }

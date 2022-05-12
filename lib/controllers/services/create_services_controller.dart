@@ -4,7 +4,7 @@ class CreateServicesController extends GetxController {
   bool isLoading = false;
   TextEditingController requestDescription = TextEditingController();
   TextEditingController address = TextEditingController();
-  TextEditingController dateinput = TextEditingController(); 
+  TextEditingController dateinput = TextEditingController();
   List dropDownList = [];
   bool isDateShown = false;
   bool hideAddress = false;
