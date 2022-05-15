@@ -60,4 +60,16 @@ class AppStrings {
   static const String serviceTitle = "Service Title";
   static const String applyCancllationCharges = "Apply Cancellation Charges";
 
+
+   // -------------------- Add Service Provider Screen Strings ----------------
+  static const String createBussinessProfile = "Create Business Profile";
+  static const String vatRegistered = "VAT Registered";
+  static const String companyNumber = "Company Number";
+  static const String companyName = "Company name";
+  static const String vatNumber = "VAT Number";
+
+  // -------------------- Manage Badge Screen Strings ----------------
+  static const String manageBadge = "Manage Badge";
+  static const String selectBadge = "Select Badge";
+
 }
